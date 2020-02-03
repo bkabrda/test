@@ -1,0 +1,10 @@
+name: test
+on: [push]
+jobs:
+  testjob:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://fedora:31
+        with:
+          args: "/proc/self/cgroup"
+          entrypoint: "cat"
